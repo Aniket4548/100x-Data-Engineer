@@ -1,10 +1,10 @@
 # 🚀 100x Data Engineer — Week 0
 
-## Development Environment Setup
+## Development Environment & Database Setup
 
-Before starting the 100x Data Engineer roadmap, I set up my complete local development environment.
+Before starting the 100x Data Engineer roadmap, I set up my local development environment and prepared the PostgreSQL database that I will use throughout the roadmap.
 
-The goal of Week 0 was simple: **get all the tools installed, configured, and working so I can start building from Week 1.**
+The goal of Week 0 was simple: **build the foundation required to start the actual Data Engineering work from Week 1.**
 
 ---
 
@@ -109,7 +109,7 @@ I also added `.venv/` to `.gitignore` so that the virtual environment is never p
 
 ## 5. Python Development Packages
 
-I installed the basic packages required for my data engineering work:
+I installed the basic packages required for my Data Engineering work:
 
 ```bash
 pip install pandas numpy requests python-dotenv sqlalchemy
@@ -123,23 +123,17 @@ pip freeze > requirements.txt
 
 ---
 
-## 6. SQL Environment
+## 6. SQL & PostgreSQL Environment
 
-I prepared my SQL development environment for the databases I will work with:
+I prepared my SQL development environment and PostgreSQL database.
 
-* MySQL
-* PostgreSQL
-* SQL Server
-
-I also installed/configured the required database clients and management tools.
-
-I verified that I could connect to my databases and execute basic SQL queries.
+I verified that I could connect to PostgreSQL and execute basic SQL queries successfully.
 
 ---
 
 ## 7. Docker
 
-I installed Docker Desktop because I will use containers extensively throughout the roadmap.
+I installed Docker Desktop because I will use containers throughout the roadmap.
 
 I verified Docker:
 
@@ -203,9 +197,138 @@ I added `.env` to `.gitignore`:
 
 ---
 
-## 10. Project Structure
+# 🗄️ Database Preparation
 
-I created the initial structure for my 100x Data Engineer repository:
+Database preparation is also a part of Week 0.
+
+I prepared the PostgreSQL database using SQL scripts and Python data-generation scripts.
+
+The database setup follows a specific execution order. **The SQL files must be executed first, followed by the Python data-generation scripts.**
+
+---
+
+## 10. Database File Execution Order
+
+This order matters.
+
+### Step 1 — Create Schemas
+
+First, I connect to the PostgreSQL database:
+
+```text
+100x
+```
+
+Then I run:
+
+```text
+sql/01_create_schemas.sql
+```
+
+---
+
+### Step 2 — Create Tables
+
+After the schemas are created, I run:
+
+```text
+sql/02_create_tables.sql
+```
+
+---
+
+### Step 3 — Create Indexes
+
+After the tables are created, I run:
+
+```text
+sql/03_create_indexes.sql
+```
+
+**I don't run views yet because they haven't been created at this stage.**
+
+---
+
+## 11. Generate the Data
+
+After completing the SQL setup, I generate the data using the Python scripts located in:
+
+```text
+week-01/database/scripts/
+```
+
+The scripts are executed in the following order.
+
+### Step 1 — Generate Customers
+
+```bash
+python generate_customer.py
+```
+
+### Step 2 — Generate Catalog
+
+```bash
+python generate_catalog.py
+```
+
+### Step 3 — Generate Orders
+
+```bash
+python generate_orders.py
+```
+
+### Step 4 — Generate Logistics
+
+```bash
+python generate_logistics.py
+```
+
+### Step 5 — Validate the Database
+
+Finally, I run:
+
+```bash
+python validate.py
+```
+
+The validation script confirms that the database and generated data have been prepared correctly.
+
+---
+
+## 12. Database Setup Flow
+
+The complete execution flow is:
+
+```text
+SQL
+ │
+ ├── 01_create_schemas.sql
+ │
+ ├── 02_create_tables.sql
+ │
+ └── 03_create_indexes.sql
+          │
+          ▼
+Python
+ │
+ ├── generate_customer.py
+ │
+ ├── generate_catalog.py
+ │
+ ├── generate_orders.py
+ │
+ ├── generate_logistics.py
+ │
+ └── validate.py
+```
+
+This gives me a repeatable database setup that I can use for the upcoming Data Engineering work.
+
+---
+
+## 13. Project Structure
+
+My 100x Data Engineer repository is organized into weekly modules:
 
 ```text
 100x-data-engineer/
@@ -220,11 +343,13 @@ I created the initial structure for my 100x Data Engineer repository:
 └── resources/
 ```
 
+The database scripts used during Week 0 are maintained as part of the Week 1 database work.
+
 ---
 
-## 11. Final Verification
+## 14. Final Verification
 
-I verified that my complete environment was working:
+I verified that my complete Week 0 foundation was working:
 
 * [x] Git installed and configured
 * [x] GitHub repository created
@@ -232,7 +357,15 @@ I verified that my complete environment was working:
 * [x] Python installed
 * [x] Python virtual environment working
 * [x] Required Python packages installed
-* [x] SQL environment ready
+* [x] PostgreSQL environment ready
+* [x] Database schemas created
+* [x] Database tables created
+* [x] Database indexes created
+* [x] Customer data generated
+* [x] Catalog data generated
+* [x] Order data generated
+* [x] Logistics data generated
+* [x] Database validation completed
 * [x] Docker working
 * [x] Docker Compose working
 * [x] Jupyter working
@@ -243,6 +376,6 @@ I verified that my complete environment was working:
 
 ## Week 0 Complete ✅
 
-My development environment is ready.
+My development environment and database foundation are ready.
 
 **Next → Week 1**
