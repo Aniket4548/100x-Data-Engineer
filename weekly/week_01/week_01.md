@@ -667,4 +667,4 @@ WHERE rn = 1;
 | **9** | `FIRST_VALUE()` | Value | Get first value in frame. | Comparing current item to category minimum. |
 | **10**| `LAST_VALUE()` | Value | Get last value in frame *(requires explicit frame)*. | Comparing current item to category maximum. |
 | **11**| `NTH_VALUE()` | Value | Get $N$-th value in frame. | Finding runner-up / 2nd highest item. |
-| **—** | `SUM()/AVG() OVER()`| Aggregate | Running or partition-level aggregates. | Cumulative revenue, 7-day rolling averages. |
+| **12** | `SUM()/AVG() OVER()`| Aggregate | Running or partition-level aggregates. | Cumulative revenue, 7-day rolling averages. |

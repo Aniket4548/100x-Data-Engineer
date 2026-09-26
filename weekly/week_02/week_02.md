@@ -646,7 +646,7 @@ SET
 WHERE customer_id = 'a0000000-0000-0000-0000-000000000001';
 ```
 
-*(Complete implementations and point-in-time queries in [`10_scd_patterns.sql`](file:///c:/100x/100x-Data-Engineer/weekly/week_02/10_scd_patterns.sql))*
+*(Complete implementations and point-in-time queries in [`10_scd_patterns.sql`](https://github.com/Aniket4548/100x-Data-Engineer/blob/main/weekly/week_02/10_scd_patterns.sql))*
 
 ---
 
@@ -658,7 +658,7 @@ Calculating not just the revenue directly attached to a category, but recursivel
 ### Part 2: Incremental Staging Upsert Pipeline
 Simulating a real ELT landing table, applying data deduplication with `ROW_NUMBER()`, and executing an idempotent merge into production.
 
-*(Full implementations provided in [`09_build_hierarchical_upsert.sql`](file:///c:/100x/100x-Data-Engineer/weekly/week_02/09_build_hierarchical_upsert.sql))*
+*(Full implementations provided in [`09_build_hierarchical_upsert.sql`](https://github.com/Aniket4548/100x-Data-Engineer/blob/main/weekly/week_02/09_build_hierarchical_upsert.sql))*
 
 ---
 
