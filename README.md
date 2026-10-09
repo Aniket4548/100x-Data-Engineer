@@ -165,6 +165,13 @@ Sales analytics query pack.
 * `MERGE`
 * Upsert patterns
 
+### SCD
+
+* Type 0
+* Type 1
+* Type 2
+* Type 3
+
 ### CODE
 
 30 problems.
@@ -193,12 +200,6 @@ Hierarchical employee/category analysis + incremental upsert.
 * Degenerate dimensions
 * Role-playing dimensions
 
-### SCD
-
-* Type 0
-* Type 1
-* Type 2
-* Type 3
 
 ### CODE
 
