@@ -1786,8 +1786,8 @@ flowchart TD
     PlanSeq["Planner Plan: <b>Sequential Scan</b><br/>Low Selectivity ➔ Avoids 175,000 costly random I/O seeks!"]
 
     Q1 --> CheckMCV
-    CheckMCV -->|Rare Value (3%)| RareVal --> PlanIdx
-    CheckMCV -->|Common Value (35%)| CommonVal --> PlanSeq
+    CheckMCV -->|"Rare Value (3%)"| RareVal --> PlanIdx
+    CheckMCV -->|"Common Value (35%)"| CommonVal --> PlanSeq
 
     classDef qry fill:#1e293b,stroke:#38bdf8,stroke-width:2px,color:#f8fafc;
     classDef rare fill:#064e3b,stroke:#10b981,stroke-width:2px,color:#ecfdf5;
